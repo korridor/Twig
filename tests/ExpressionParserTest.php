@@ -837,7 +837,7 @@ class NotReadyTestExpressionWithNoConstructor extends TestExpression
 class ReadyFunctionExpression extends FunctionExpression
 {
     #[FirstClassTwigCallableReady]
-    public function __construct(TwigFunction|string $function, Node $arguments, int $lineno)
+    public function __construct($function, Node $arguments, int $lineno)
     {
         parent::__construct($function, $arguments, $lineno);
     }
@@ -846,7 +846,7 @@ class ReadyFunctionExpression extends FunctionExpression
 class ReadyFilterExpression extends FilterExpression
 {
     #[FirstClassTwigCallableReady]
-    public function __construct(Node $node, TwigFilter|ConstantExpression $filter, Node $arguments, int $lineno)
+    public function __construct(Node $node, $filter, Node $arguments, int $lineno)
     {
         parent::__construct($node, $filter, $arguments, $lineno);
     }
@@ -855,7 +855,7 @@ class ReadyFilterExpression extends FilterExpression
 class ReadyTestExpression extends TestExpression
 {
     #[FirstClassTwigCallableReady]
-    public function __construct(Node $node, TwigTest|string $test, ?Node $arguments, int $lineno)
+    public function __construct(Node $node, $test, ?Node $arguments, int $lineno)
     {
         parent::__construct($node, $test, $arguments, $lineno);
     }
