@@ -700,7 +700,7 @@ class ExpressionParserTest extends TestCase
                 };
 
                 return [
-                    new UnaryOperatorExpressionParser($class::class, '!', 50),
+                    new UnaryOperatorExpressionParser(get_class($class), '!', 50),
                 ];
             }
         });
